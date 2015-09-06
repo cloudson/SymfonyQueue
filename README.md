@@ -15,5 +15,31 @@ that queue?
 
 # How to use 
 
-Soon...
+```php
+<?php
+
+$app->share($app->extend('dispatcher',  function ($dispatcher) use ($app) {
+    $transformer = new \Cloudson\SymfonyQueue\Transformer\ByInterfaceTransformer(
+        $app['serializer']
+    );
+    $queue = new \Cloudson\SymfonyQueue\Queue\RabbitMQ([
+        'host' => 'yourhost',
+        'port' => 'port',
+        'username' => 'username',
+        'password' => 'password',
+            
+    ]);
+    
+    return new \Cloudson\SymfonyQueue\QueueManager(
+        $dispatcher,
+        $queue,
+        $transformer
+    );
+}));  
+
+
+```
+
+And booommmm!!!
+
 
