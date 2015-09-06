@@ -1,0 +1,22 @@
+{
+    "name" : "cloudson/symfony-queue",
+    "description" : "A library that decorates event dispatcher and makes of each listener a consumer of a queue",
+    "author" : {
+        "name" : "Claudson Oliveira",
+        "email" : "claudsonweb@gmail.com"
+    },
+    "require" : {
+        "php" : ">=5.5",
+        "symfony/event-dispatcher" : "~2.7",
+        "symfony/serializer" : "~2.7",
+        "videlalvaro/php-amqplib": "2.5.*"
+    },
+    "require-dev" : {
+        "phpunit/phpunit" : "~4.8"
+    },
+    "autoload" : {
+        "psr-4" : {
+            "Cloudson\\SymfonyQueue\\" : "src"
+        }
+    }
+}
